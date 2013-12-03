@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript é realmente um bicho de sete cabeças​? </title>
+
+        <link href="css/estilo.css" rel="stylesheet" />
+
+        <script type="text/javascript" src="js/shCore.js"></script>
+        <script type="text/javascript" src="js/shBrushJScript.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+        <script type="text/javascript">SyntaxHighlighter.all();</script>
+    </head>
+
+    <body class="impress-not-supported">
+        <div id="impress">
+            <div class="step slide" data-x="540" data-y="600" data-scale="4.5">
+                <div class="big bold">
+                    <div class="text2">JavaScript</div>
+                    <div class="text1 left" style="margin-top: 30px;">é realmente um bicho de sete cabeças​?</div>
+                </div>
+
+                <p class="right">
+                  <strong>@RenanSiravegna</strong>
+                </p>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="-146" data-scale="1">
+                <div class="text1 upper">Surgimento</div>
+                <p class="left">Netscape 2 BETA, 1995</p>
+                <p class="left">Mocha e LiveScript</p>
+                <p class="left">Suporte ao Java</p>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="150" data-scale="1">
+                <div class="text-topic left upper">Problemas!</div>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="381" data-scale="1">
+                <div class="text-topic left upper">Global namespace</div>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="800" data-scale="1">
+                <!--
+                    Pode não ser muito fácil de detectar se estiver em variáveis, embrenhada no meio do código
+                    Um input vazio pode converter um número em string
+                -->
+
+                <div class="text-topic left upper">Auto type conversion</div>
+
+                <pre class="brush: js;">
+                    "1" + 1;  // "11"
+                    "1" - 1;  // 0
+
+                    "1"++; // 2
+                    "1" += 1; // "11"
+
+                    1 + ""; // Valor de um input
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="1500" data-scale="1">
+                <div class="text-topic left upper">Globais implícitas</div>
+
+                <pre class="brush: js;">
+                    function bar() {
+                        foo = 5;
+                    }
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="2000" data-scale="1" style="width: 1150px">
+                <div class="text-topic left upper">Keyword "this"</div>
+
+                <pre class="brush: js;">
+                    function ExampleObject() {
+                        // this = ExampleObject
+                        this.propriedade = 1;
+
+                        // this = quem disparou o evento
+                        this.onEvent = function() {
+                        };
+                    }
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="2500" data-scale="1">
+                <!--
+                    Algumas sintaxes que não são coerentes ou não fazem o que esperamos que façam
+
+                    Induz ao erro
+                -->
+
+                <div class="text-topic left upper">With</div>
+
+                <pre class="brush: js;">
+                    with (obj) {
+                        foo = 1;
+                        bar = 2;
+                    }
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="2900" data-scale="1">
+                <!--
+                    Itera sobre a propriedade presentes no prototype do objeto
+                -->
+
+                <div class="text-topic left upper">For</div>
+
+                <pre class="brush: js;">
+                    for (var name in object) { }
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="3300" data-scale="1">
+                <div class="text-topic left upper">ASI</div>
+
+                <pre class="brush: js;">
+                    i
+                    ++
+                    j
+                </pre>
+
+                <pre class="brush: js;">
+                    i;
+                    ++j;
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="3200" data-y="3800" data-scale="1">
+                <!--
+                    Falar sobre problemas x-browser
+                    Comentar que não é tão chato, mas presente em recursos mais avançados como um file upload
+                    Firefox é a mãe, pois possui o JS mais bem implementado e cheio de recursos, cuidado
+                -->
+                <div class="text-topic upper">Problemas</div>
+                <div class="text-topic upper">X-Browser</div>
+
+                <img src="img/cross-browser-theming.png" style="margin-top: 50px;" />
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="1750" data-scale="1">
+                <div class="text1 upper left">Por que</div>
+                <div class="text1 upper left">se tornou tão</div>
+                <div class="text3 upper left">popular?</div>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="2050" data-scale="1">
+                <p class="left">Aconteceu em 2002</p>
+                <p class="left">CSS 2 + Interfaces Complexas + Produtividade</p>
+                <p class="left">A única escolha quando se fala de desenvolvimento para o navegador</p>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="2340" data-scale="1">
+                <div class="text1 left">XmlHttp ActiveX</div>
+                <p class="left">Surgiu no IE 5</p>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="2590" data-scale="1">
+                <div class="text1 left">XmlHttpRequest</div>
+                <p class="left">Padrão no IE 7</p>
+                <p class="left">Adotado por vários outros navegadores</p>
+            </div>
+
+            <div class="step slide" data-x="-100" data-y="1729" data-scale="1">
+                <img src="img/google.png" />
+            </div>
+
+            <div class="step slide" data-x="-100" data-y="2100" data-scale="1">
+                <img src="img/googlemaps.jpg" width="404" height="202" />
+                <img src="img/gmail.png" width="404" height="202" />
+                <div class="text1">Implementação</div>
+                <div class="text2">x-browser</div>
+            </div>
+
+            <div class="step slide" data-x="-100" data-y="2440" data-scale="1">
+                <div class="text1">UX Designer</div>
+                <div class="text2">Jesse James</div>
+            </div>
+
+            <div class="step slide" data-x="900" data-y="1729" data-scale="1">
+                <div class="text1">O que é</div>
+                <div class="text2" style="margin-top: 40px;">JavaScript?</div>
+            </div>
+
+            <div class="step slide" data-x="900" data-y="2023" data-scale="1">
+                <p>Estranho</p>
+                <p>Feio</p>
+                <p>Gigantesco</p>
+                <p>Bizarro</p>
+            </div>
+
+            <div class="step slide" data-x="900" data-y="2300" data-scale="1">
+                <div class="text1">Epa, perai...</div>
+                <div class="text2">Bizarro???</div>
+            </div>
+
+            <div class="step slide" data-x="900" data-y="2683" data-scale="1">
+                <pre class="brush: js;">
+                    [1, 2] + [3, 4] // "1,23,4"
+                </pre>
+
+                <pre class="brush: js;">
+                    {} + [] // 0
+                </pre>
+
+                <pre class="brush: js;">
+                    [] + {} // "[object Object]"
+                </pre>
+
+                <pre class="brush: js;">
+                    {} + {} // NaN
+                </pre>
+
+                <pre class="brush: js;">
+                    "\r\f\t" == 0 // true
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="900" data-y="3264" data-scale="1">
+                <img src="img/codigo.png" />
+            </div>
+
+            <div class="step slide" data-x="900" data-y="3264" data-scale="1">
+                <img src="img/Hydra.jpg" />
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="1729" data-scale="1">
+                <img src="img/nodejs-logo.png" />
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="2000" data-scale="1">
+                <p>264.131 repositórios</p>
+                <p>#1 no GitHub</p>
+                <p>Pesquisa de Agosto/2013</p>
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="2300" data-scale="1">
+                <div class="text3">Pense!</div>
+                <p>Traga conhecimentos de outros lugares</p>
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="2600" data-scale="1">
+                <div class="text1">Separe</div>
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="2800" data-scale="1">
+                <div class="text1">Organize</div>
+            </div>
+
+            <div class="step slide" data-x="1800" data-y="3100" data-scale="1">
+                <div class="text1">Reduza</div>
+                <h2>Reaproveite o que é comum</h2>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="-750">
+                <p>Helpers</p>
+
+                <pre class="brush: js;">
+                    $("#exemplo").length > 0;
+                </pre>
+
+                <pre class="brush: js;">
+                    $("#exemplo").exists();
+                </pre>
+            </div>
+
+
+            <div class="step slide" data-x="-940" data-y="-1000">
+                <p>Plugins</p>
+
+                <pre class="brush: js;">
+                    $("#caixa").painel();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="-1440">
+                <p>Pré-configurações</p>
+
+                <pre class="brush: js;">
+                    $("#dialog").dialog({
+                        autoOpen: true,
+                        height: 300,
+                        width: 350,
+                        modal: true,
+                        position: center,
+                        resizable: false
+                    });
+                </pre>
+
+                <pre class="brush: js;">
+                    $("#dialog").dialog();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="-1830">
+                <!--
+                    Na sua essencia, JS é baseado em OO
+                -->
+                <div class="text2">Orientação a objetos</div>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="-1300">
+                <div class="text1">Objetos nativos</div>
+                <p class="left">Boolean</p>
+                <p class="left">String</p>
+                <p class="left">Date</p>
+                <p class="left">Math</p>
+                <p class="left">Array</p>
+                <p class="left">Functions</p>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="-500" style="width: 1100px;">
+                <div class="text1">Objeto</div>
+
+                <pre class="brush: js;">
+                    function Pessoa() {
+                        this.Nome = "Renan";
+                        this.Sobrenome = "Siravegna";
+
+                        this.Falar = function() {
+                            console.log(
+                                this.Nome +
+                                " " +
+                                this.Sobrenome
+                            );
+                        }
+                    }
+
+                    var objeto = new Pessoa();
+                    objeto.Falar();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="450" style="width: 1100px;">
+                <div class="text1">Objeto</div>
+
+                <pre class="brush: js;">
+                    var objeto = {
+                        Nome: "Renan",
+                        Sobrenome: "Siravegna",
+
+                        Falar: function() {
+                            console.log(
+                                this.Nome +
+                                " " +
+                                this.Sobrenome
+                            );
+                        }
+                    };
+
+                    objeto.Falar();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="1050" style="width: 1100px;">
+                <div class="text1">Herança</div>
+                <div class="text3 upper">existe</div>
+            </div>
+
+            <div class="step slide" data-x="-2150" data-y="1400" style="width: 1100px;">
+                <pre class="brush: js;">
+                    function ObjetoPai() { }
+                    function ObjetoFilho() { }
+
+                    ObjetoPai.prototype =
+                        new ObjetoFilho();
+
+                    ObjetoPai.prototype.constructor =
+                        ObjetoPai;
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="100" data-y="-650">
+                <div class="text3 upper">Técnicas</div>
+            </div>
+
+            <div class="step slide" data-x="100" data-y="-850">
+                <p>Closures</p>
+
+                <pre class="brush: js;">
+                    (function() {
+                        (...)
+                    })();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="100" data-y="-1200">
+                <p>Unobtrusive</p>
+
+                <pre class="brush: js;">
+                    $("input[type=text]")
+                        .on("click", function(){
+                        var debug =
+                            $(this).data("debug");
+
+                        (...)
+                    });
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="100" data-y="-1800">
+                <p>Código de fácil leitura</p>
+
+                <pre class="brush: js;">
+                    function teste() {
+                        (...)
+
+                        $(body).animate(
+                            { scrollTop: 0 },
+                            '500', 'swing');
+                    }
+                </pre>
+
+                <pre class="brush: js;">
+                    function teste() {
+                        (...)
+
+                        rolarAoTopo();
+                    }
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="100" data-y="-2380">
+                <p>Interface fluente</p>
+
+                <pre class="brush: js;">
+                    MensagemInformativa
+                        .UmaMensagem()
+                        .ComTexto("Salvo!")
+                        .ComIcone(icones.Sucesso)
+                        .Exibir();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="1100" data-y="-750">
+                <p>Scrict mode</p>
+
+                <pre class="brush: js;">
+                    (function() {
+                        "use strict";
+                    })();
+                </pre>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="-2200">
+                <div class="text1">Design patterns</div>
+                <p class="left">Mas cuidado com a "patternite"...</p>
+            </div>
+
+            <div class="step slide" data-x="-940" data-y="-2400">
+                <div class="text1">Module Pattern</div>
+            </div>
+
+            <div class="step slide" data-x="1100" data-y="-1550">
+                <div class="text1">Reinvente a roda</div>
+                <p class="left">Algumas rodas são quadradas</p>
+                <p class="left">Pense em coisas simples</p>
+            </div>
+
+            <div class="step slide" data-x="1100" data-y="-2000">
+                <div class="text1">Entendimento e</div>
+                <div class="text3 upper">disciplina</div>
+
+                <p class="left">Saber o que está fazendo</p>
+                <p class="left">Não faça apenas "porque é assim" ou "porque assim funciona"</p>
+                <p class="left">Saiba o "por que" das coisas</p>
+            </div>
+
+            <div class="step slide" data-x="2100" data-y="-750">
+                <div class="text3 upper">Ferramentas</div>
+            </div>
+
+            <div class="step slide" data-x="2100" data-y="-950">
+                <img src="img/jslint.png" />
+            </div>
+
+            <div class="step slide" data-x="2100" data-y="-1150">
+                <img src="img/mootools.png" />
+            </div>
+
+            <div class="step slide" data-x="2100" data-y="-1450" style="text-align: center">
+                <img src="img/coffeescript.png" width="559" />
+                <img src="img/typescript.jpg" width="559" style="margin-top: 40px" />
+            </div>
+
+            <div class="step slide" data-x="2100" data-y="-1900">
+                <img src="img/jquery.png" width="559" height="133" />
+                <img src="img/jqueryui.png" width="559" height="133" style="margin-top: 40px" />
+            </div>
+
+            <div class="step active final" data-x="5000" data-y="0" data-rotate="-90" data-rotate-y="90" data-scale=".1">
+                <img src="img/logomarca D_githoBrasil pantone2CMYK_p2.bmp" />
+                <a href="http://www.digithobrasil.com.br/agilidade/" target="_blank">http://www.digithobrasil.com.br/agilidade/</a>
+            </div>
+        </div>
+
+        <script src="js/impress.js"></script>
+        <script>impress().init();</script>
+    </body>
+</html>
